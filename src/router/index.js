@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import 'ant-design-vue/dist/antd.css';
 import VueRouter from 'vue-router';
-import Home from "@/components/Home.vue";
+import Home from "@/components/home/Home.vue";
 
 
 Vue.use(VueRouter);
