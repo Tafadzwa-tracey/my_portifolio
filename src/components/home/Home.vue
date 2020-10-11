@@ -4,34 +4,47 @@
       <div  />
        <!--<a-avatar class= "logo" src="./assets/tracey.png" />-->
        <vue-avatar class= "logo" :username="'Tracey'" :src="require('@/assets/tracey.png')"></vue-avatar>
-      <a-menu theme="dark" mode="inline" :default-selected-keys="['4']">
-        <a-menu-item key="1">
+      <a-menu theme="dark" mode="inline" :default-selected-keys="['1']">
+        <a-menu-item  class="menu-items" key="1">
           <a-icon type="project" />
           <span class="nav-text">Projects</span>
         </a-menu-item>
-        <a-menu-item key="2">
+        <a-menu-item class="menu-items" key="2">
           <a-icon type="user" />
           <span class="nav-text">About</span>
         </a-menu-item>
-        <a-menu-item key="3">
+        <a-menu-item class="menu-items" key="3">
           <a-icon type="phone" />
           <span class="nav-text">Contacts</span>
         </a-menu-item>
-        <a-menu-item key="4">
+     
+        <a-menu-item class="menu-items" key="4">
+        <a :href="'https://twitter.com/Tracey02189951?s=09'">
           <a-icon type="twitter" />
           <span class="nav-text">twitter</span>
+        </a>
+          </a-menu-item>
+       
+        <a-menu-item class="menu-items" key="5">
+         
+          <a :href="'https://www.facebook.com/tafadzwa.taruvinga.5872'">
+              <a-icon type="facebook" />
+              <span class="nav-text">facebook</span>
+          </a>
         </a-menu-item>
-        <a-menu-item key="5">
-          <a-icon type="facebook" />
-          <span class="nav-text">facebook</span>
-        </a-menu-item>
-        <a-menu-item key="6">
+        <a-menu-item class="menu-items" key="6">
           <a-icon type="instagram" />
           <span class="nav-text">instagram</span>
         </a-menu-item>
-        <a-menu-item key="8">
+        <a-menu-item  class="menu-items" key="8">
           <a-icon type="linkedin" />
           <span class="nav-text">LinkedIn</span>
+        </a-menu-item>
+        <a-menu-item class="menu-items" key="9">
+          <a :href = "'#'">
+          <a-icon type="mail" />
+          <span class="nav-text">Email</span>
+          </a>
         </a-menu-item>
       </a-menu>
     </a-layout-sider>
@@ -41,10 +54,13 @@
         <div :style="{ padding: '24px',
                        background: 'grey', 
                        textAlign: 'center',
+          
+                      /*backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('require('@/assets/tracey.png')')`,*/
                        backgroundImage: 'url(' + require('@/assets/tracey.png') + ')',
                        backgroundPosition: 'center center',
                        backgroundSize:'cover',
-                       height:'100vh'}">
+                       height:'100vh'}"
+                       >
           ...
           <br />
           Really
@@ -67,6 +83,19 @@
   </a-layout>
 </template>
 
+<script>
+export default {
+ 
+ computed: {
+      backgroundImage(url) {
+        let overlay = 'linear-gradient(270deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5))';
+        return 'background-image:'+ overlay +' , url(' + url + ');';
+      }
+    }
+
+}
+
+</script>
 
 <style>
 #components-layout-demo-fixed-sider .logo {
@@ -74,8 +103,10 @@
   margin: 16px;
 
 }
-image{
-  background-image: url('~@/assets/logo.png');
-}
 
+ .menu-items {
+ text-align: left;
+ }
+
+ 
 </style>

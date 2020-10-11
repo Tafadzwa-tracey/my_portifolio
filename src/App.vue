@@ -16,7 +16,6 @@ export default {
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
-  background-image: url('./assets/logo.png');
   padding:0;
   margin:0;
 }
