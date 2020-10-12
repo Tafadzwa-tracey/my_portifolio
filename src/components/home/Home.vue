@@ -26,21 +26,28 @@
           </a-menu-item>
        
         <a-menu-item class="menu-items" key="5">
-         
           <a :href="'https://www.facebook.com/tafadzwa.taruvinga.5872'">
               <a-icon type="facebook" />
               <span class="nav-text">facebook</span>
           </a>
         </a-menu-item>
+
         <a-menu-item class="menu-items" key="6">
-          <a-icon type="instagram" />
-          <span class="nav-text">instagram</span>
+          <a :href="'https://www.instagram.com/tracey.1416'">
+              <a-icon type="instagram" />
+              <span class="nav-text">instagram</span>
+          </a>
         </a-menu-item>
-        <a-menu-item  class="menu-items" key="8">
-          <a-icon type="linkedin" />
-          <span class="nav-text">LinkedIn</span>
+
+        <a-menu-item  class="menu-items" key="7">
+
+           <a :href="'https://www.linkedin.com/in/tafadzwa-tracey-taruvinga-1507731b3'">
+              <a-icon type="linkedin" />
+              <span class="nav-text">LinkedIn</span>
+          </a>
         </a-menu-item>
-        <a-menu-item class="menu-items" key="9">
+
+        <a-menu-item class="menu-items" key="8">
           <a :href = "'#'">
           <a-icon type="mail" />
           <span class="nav-text">Email</span>
