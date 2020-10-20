@@ -1,8 +1,7 @@
 <template>
   <a-layout id="components-layout-demo-fixed-sider" >
     <a-layout-sider :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }">
-      <div  />
-       <!--<a-avatar class= "logo" src="./assets/tracey.png" />-->
+
        <vue-avatar class= "logo" :username="'Tracey'" :src="require('@/assets/tracey.png')"></vue-avatar>
       <a-menu theme="dark" mode="inline" :default-selected-keys="['1']">
         <a-menu-item  class="menu-items" key="1">
@@ -48,26 +47,23 @@
         </a-menu-item>
 
         <a-menu-item class="menu-items" key="8">
-          <a :href = "'#'">
-          <a-icon type="mail" />
-          <span class="nav-text">Email</span>
-          </a>
+          <router-link  to ="/mail"> 
+            <a-icon type="mail" />
+            <span class="nav-text">
+              Email
+            </span>
+          </router-link>
+      
+          
+
         </a-menu-item>
+
       </a-menu>
     </a-layout-sider>
     <a-layout :style="{ marginLeft: '200px' }">
       <a-layout-header :style="{ background: '#fff', padding: 0 }"  />
       <a-layout-content :style="{ margin: '24px 16px 0', overflow: 'initial' }">
-        <div :style="{ padding: '24px',
-                       background: 'grey', 
-                       textAlign: 'center',
-          
-                      /*backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('require('@/assets/tracey.png')')`,*/
-                       backgroundImage: 'url(' + require('@/assets/tracey.png') + ')',
-                       backgroundPosition: 'center center',
-                       backgroundSize:'cover',
-                       height:'100vh'}"
-                       >
+        <div :style="productStyle" >
           ...
           <br />
           Really
@@ -92,13 +88,24 @@
 
 <script>
 export default {
- 
- computed: {
-      backgroundImage(url) {
-        let overlay = 'linear-gradient(270deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5))';
-        return 'background-image:'+ overlay +' , url(' + url + ');';
-      }
-    }
+  name:'app',
+ data() {
+  return {
+     imageStyleObject:{
+         backgroundPosition: 'center center',
+        backgroundSize:'cover',
+        height:'100vh'
+     }
+  }
+},
+computed: { // will be re-computed when the image property changes
+ productStyle () {
+       var overlay = 'linear-gradient(270deg, rgba(198, 210, 0, .5), rgba(60, 80, 100, .5)) ';
+      return 'background-image:'+ overlay +' , url(' + require('@/assets/tracey.png') + ') ;';
+    },
+
+
+}
 
 }
 
