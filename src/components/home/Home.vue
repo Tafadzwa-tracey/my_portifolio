@@ -61,10 +61,20 @@
       </a-menu>
     </a-layout-sider>
     <a-layout :style="{ marginLeft: '200px' }">
-      <a-layout-header :style="{ background: '#fff', padding: 0 }"  />
-      <a-layout-content :style="{ margin: '24px 16px 0', overflow: 'initial' }">
-        <div :style="productStyle" >
-          ...
+     
+      <a-layout-content :style="{ margin: '0 16px 0', overflow: 'initial' }">
+        <div  class="backGround"  :style ="productStyle">
+               <div class="cover-text">
+                  <p v-if="isMorning">Good morning!</p>
+                  <p v-if="isAfternoon">Good afternoon!</p>
+                  <p v-if="isEvening">Good evening!</p>
+                  <h3>Hie , I'm Tracey</h3>
+                  <h1>Web  developer</h1>
+             </div>
+        </div>
+
+        <div>
+            ...
           <br />
           Really
           <br />...<br />...<br />...<br />
@@ -78,6 +88,7 @@
           <br />...<br />...<br />...<br />...<br />...<br />
           content
         </div>
+
       </a-layout-content>
       <a-layout-footer :style="{ textAlign: 'center' }">
         Ant Design ©2018 Created by Ant UED
@@ -87,27 +98,29 @@
 </template>
 
 <script>
+ var hours = new Date().getHours();
 export default {
   name:'app',
  data() {
-  return {
-     imageStyleObject:{
-         backgroundPosition: 'center center',
-        backgroundSize:'cover',
-        height:'100vh'
-     }
-  }
+   return{
+       isMorning: hours < 12,
+      isAfternoon: hours >= 12 && hours < 18,
+      isEvening: hours >= 18
+   }
+    
 },
+
 computed: { // will be re-computed when the image property changes
- productStyle () {
-       var overlay = 'linear-gradient(270deg, rgba(198, 210, 0, .5), rgba(60, 80, 100, .5)) ';
+  productStyle () {
+     //var overlay = 'linear-gradient(270deg,rgba(12,10,54,0.7),rgba(225,0,0,0.3)) ';
+     var overlay = 'linear-gradient(to top left ,rgba(225,0,0,0.2),rgba(255,0,0,0.5) 50% ,rgba(12,10,54,0.7) 50%,rgba(12,10,54,0.7))';
       return 'background-image:'+ overlay +' , url(' + require('@/assets/tracey.png') + ') ;';
     },
-
-
+ 
 }
 
 }
+
 
 </script>
 
@@ -122,5 +135,41 @@ computed: { // will be re-computed when the image property changes
  text-align: left;
  }
 
+.backGround{
+    background-position: center center;
+    background-size:cover;
+    height:100vh;
+}
+
+.cover-text {
+  text-align: start;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-10%, -10%);
+
+}
+
+p {
+  font-size: 15px;
+  padding: 20px;
+  padding-top: 0px;
+  padding-left: 0px;
+  background:linear-gradient(to bottom right ,white ,#D35400    );
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+h3 {
+  font-size: 20px;
+  color: white;
+}
+
+
+h1{
+  font-size: 50px;
+  color: white;
+
+}
  
 </style>
