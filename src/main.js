@@ -5,9 +5,11 @@ import 'ant-design-vue/dist/antd.css';
 import VueResource from 'vue-resource';
 import VueAvatar from '@lossendae/vue-avatar'
 import router from './router';
+import VueScrollTo from 'vue-scrollto'
 
 Vue.use(VueResource);
 Vue.component('vue-avatar', VueAvatar)
+Vue.use(VueScrollTo)
 
 Vue.config.productionTip = false
 const config = require('../config');

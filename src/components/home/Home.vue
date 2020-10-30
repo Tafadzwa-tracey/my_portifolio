@@ -4,7 +4,7 @@
 
        <vue-avatar class= "logo" :username="'Tracey'" :src="require('@/assets/tracey.png')"></vue-avatar>
       <a-menu theme="dark" mode="inline" :default-selected-keys="['1']">
-        <a-menu-item  class="menu-items" key="1">
+        <a-menu-item class="menu-items" key="1" :style="{ backgroundColor: activeColor }" >
           <a-icon type="project" />
           <span class="nav-text">Projects</span>
         </a-menu-item>
@@ -64,16 +64,22 @@
      
       <a-layout-content :style="{ margin: '0 16px 0', overflow: 'initial' }">
         <div  class="backGround"  :style ="productStyle">
+         
                <div class="cover-text">
                   <p v-if="isMorning">Good morning!</p>
                   <p v-if="isAfternoon">Good afternoon!</p>
                   <p v-if="isEvening">Good evening!</p>
                   <h3>Hie , I'm Tracey</h3>
                   <h1>Web  developer</h1>
+
+                  <router-link to="#" v-scroll-to="'#section-two'">
+                  <a-icon type="down-circle"  class="down-button"/>
+                  </router-link>
+                
              </div>
         </div>
 
-        <div>
+        <div  id ="section-two">
             ...
           <br />
           Really
@@ -105,18 +111,25 @@ export default {
    return{
        isMorning: hours < 12,
       isAfternoon: hours >= 12 && hours < 18,
-      isEvening: hours >= 18
+      isEvening: hours >= 18,
+      activeColor : 'red',
+ 
+  
    }
     
 },
 
+
 computed: { // will be re-computed when the image property changes
   productStyle () {
-     //var overlay = 'linear-gradient(270deg,rgba(12,10,54,0.7),rgba(225,0,0,0.3)) ';
+     //var overlay = 'linear-gradient(180deg,rgba(12,10,54,0.2),rgba(225,0,0,0.2),rgba(255,0,0,0.3) ) ';
+     //var overlay = 'linear-gradient(to bottom right ,rgba(12,10,54,0.5),rgba(12,10,54,0.6))' 
+     //var overlay = 'linear-gradient(to bottom , rgba(255, 0, 0, 0.1), rgba(255,0,52,0.2),rgba(12, 10, 52, 0.3))';
      var overlay = 'linear-gradient(to top left ,rgba(225,0,0,0.2),rgba(255,0,0,0.5) 50% ,rgba(12,10,54,0.7) 50%,rgba(12,10,54,0.7))';
       return 'background-image:'+ overlay +' , url(' + require('@/assets/tracey.png') + ') ;';
     },
- 
+
+
 }
 
 }
@@ -155,8 +168,10 @@ p {
   padding: 20px;
   padding-top: 0px;
   padding-left: 0px;
-  background:linear-gradient(to bottom right ,white ,#D35400    );
+  background:linear-gradient(to bottom right ,white ,rgb(241, 144, 144)) ;
+  background-color: white;
   background-clip:text;
+   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
@@ -171,5 +186,13 @@ h1{
   color: white;
 
 }
- 
+
+.down-button{
+    margin: 50%;
+    position: -ms-page;
+    color: aliceblue;
+    font-size:50px;
+ }
+
+
 </style>
