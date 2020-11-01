@@ -80,19 +80,58 @@
         </div>
 
         <div  id ="section-two">
-            ...
-          <br />
-          Really
-          <br />...<br />...<br />...<br />
-          long
-          <br />...<br />...<br />...<br />...<br />...<br />...
-          <br />...<br />...<br />...<br />...<br />...<br />...
-          <br />...<br />...<br />...<br />...<br />...<br />...
-          <br />...<br />...<br />...<br />...<br />...<br />...
-          <br />...<br />...<br />...<br />...<br />...<br />...
-          <br />...<br />...<br />...<br />...<br />...<br />...
-          <br />...<br />...<br />...<br />...<br />...<br />
-          content
+         <div>
+    <a-row>
+      <a-col :span="24">
+        <h1 class= "about">About</h1>
+        <h4 class = "about_me">True, free private search on a large scale is impossible to offer at present.
+           We have tried for years now to obtain another private search partnership since
+          Google annulled ours, but it simply isn’t possible. It’s cost us hundreds of
+          thousands of dollars (even with the donations from thousands of you) over the
+          past few years to keep Epic going. The expense is so great at our scale we
+          couldn’t afford to launch our mobile browsers even though they've been ready and are fantastic.
+        </h4>
+      </a-col>
+    </a-row>
+    <a-row>
+      <a-col :span="12" >
+        <h2 class="about_me">Language</h2>
+        <h4 class="about_me">Python</h4>
+         <h4 class="about_me">Python</h4>
+        <h4 class="about_me">Python</h4>
+         <h4 class="about_me">Python</h4>
+      </a-col>
+      <a-col :span="12">
+        <h2 class="about_me">Education</h2>
+        <h4 class="about_me">Ocean University of China</h4>
+        <h4 class="about_me">Ocean University of China</h4>
+        <h4 class="about_me">Ocean University of China</h4>
+        <h4 class="about_me">Ocean University of China</h4>
+      </a-col>
+    </a-row>
+  </div>
+
+ <a-row>
+   <a-col :span ="24">
+     <h1 class="about">Projects</h1>
+   </a-col>
+ </a-row>
+    <a-row type = "flex" justify = "space-between">
+      <a-col :span="8">
+        <h4>Smart Home System</h4>
+        <img :src="require('@/assets/system.png')" alt="Smart Home System" :style="{height :'87%'}">
+      </a-col>
+      <a-col :span="8">
+        <h4>Stackoverflow Clone</h4>
+        <img :src="require('@/assets/overflow.png')" alt="Stackoverflow Clone" :style="{height :'87%'}">
+      </a-col>
+      <a-col :span="8">
+       <h4>My Portifolio</h4>
+        <img :src="require('@/assets/porti.png')" alt="My Portifolio" :style="{height :'87%'}">
+      </a-col>
+    </a-row>
+
+     
         </div>
 
       </a-layout-content>
@@ -112,7 +151,7 @@ export default {
        isMorning: hours < 12,
       isAfternoon: hours >= 12 && hours < 18,
       isEvening: hours >= 18,
-      activeColor : 'red',
+      activeColor : 'rgb(245, 33, 33)',
  
   
    }
@@ -142,6 +181,7 @@ computed: { // will be re-computed when the image property changes
   height: 32px;
   margin: 16px;
 
+
 }
 
  .menu-items {
@@ -168,7 +208,7 @@ p {
   padding: 20px;
   padding-top: 0px;
   padding-left: 0px;
-  background:linear-gradient(to bottom right ,white ,rgb(241, 144, 144)) ;
+  background:linear-gradient(to bottom right ,white ,rgb(245, 165, 165)) ;
   background-color: white;
   background-clip:text;
    -webkit-background-clip:text;
@@ -194,5 +234,27 @@ h1{
     font-size:50px;
  }
 
+#section-two{
+  background-color:rgb(241, 144, 144) ;
+  background-position: cover;
+}
+
+.about{
+  color:black;
+  text-align: left;
+  font-size: 25px;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.about_me{
+  color:black;
+  text-align: left;
+  margin-left: 5px;
+}
+
+img{
+inline-size: 95%;
+}
 
 </style>
