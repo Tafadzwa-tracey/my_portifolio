@@ -83,16 +83,18 @@
          <div>
     <a-row>
       <a-col :span="24">
-        <h1 class= "about">About</h1>
-        <h4 class = "about_me">True, free private search on a large scale is impossible to offer at present.
-           We have tried for years now to obtain another private search partnership since
-          Google annulled ours, but it simply isn’t possible. It’s cost us hundreds of
-          thousands of dollars (even with the donations from thousands of you) over the
-          past few years to keep Epic going. The expense is so great at our scale we
-          couldn’t afford to launch our mobile browsers even though they've been ready and are fantastic.
+        <h1 class= "about">START FROM THIS TEMPLATE!</h1>
+        <h4 class = "about_me">Hello ! I'm Tracey , a Web developer intrested in both back and
+           front end.Formal studying at Ocean University of China majoring in Computer Science 
+           has equipped me with creativity and passion needed to participate confidently in various
+           projects.I have worked on various projects with languages like javascript ,html and css,
+          php and mysql database ,frameworks like vue , laravel and hosting platforms like github.
+          I love designing and building websites constantly adding new skills to my wheelhouse.
+          Below are my projects !!!!!
         </h4>
       </a-col>
     </a-row>
+    <!--
     <a-row>
       <a-col :span="12" >
         <h2 class="about_me">Language</h2>
@@ -108,35 +110,90 @@
         <h4 class="about_me">Ocean University of China</h4>
         <h4 class="about_me">Ocean University of China</h4>
       </a-col>
-    </a-row>
+    </a-row>-->
   </div>
-
+<!--
  <a-row>
    <a-col :span ="24">
-     <h1 class="about">Projects</h1>
+     <h1 class=projects> </h1>
    </a-col>
- </a-row>
-    <a-row type = "flex" justify = "space-between">
-      <a-col :span="8">
+ </a-row>-->
+    <a-row type = "flex" justify = "space-inbetween" :style="{marginTop:'50px'}">
+     
+      <a-col :span="11">
+       <h4>My Portifolio</h4>
+        <img :src="require('@/assets/myp.png')" alt="My Portifolio" :style="{height :'87%'}">
+      </a-col>
+      
+
+       <a-col :span="11">
         <h4>Smart Home System</h4>
         <img :src="require('@/assets/system.png')" alt="Smart Home System" :style="{height :'87%'}">
       </a-col>
-      <a-col :span="8">
+
+      <a-col :span="11">
         <h4>Stackoverflow Clone</h4>
         <img :src="require('@/assets/overflow.png')" alt="Stackoverflow Clone" :style="{height :'87%'}">
       </a-col>
-      <a-col :span="8">
-       <h4>My Portifolio</h4>
-        <img :src="require('@/assets/porti.png')" alt="My Portifolio" :style="{height :'87%'}">
+
+       <a-col :span="11">
+       <h4>Icecream App</h4>
+        <img :src="require('@/assets/ice.png')" alt="Icecream App" :style="{height :'87%'}">
       </a-col>
-    </a-row>
 
-     
-        </div>
-
+      </a-row>
+      </div>
       </a-layout-content>
-      <a-layout-footer :style="{ textAlign: 'center' }">
-        Ant Design ©2018 Created by Ant UED
+
+
+      <a-layout-footer>
+        <div id = "section-three" >
+    <a-form :form="form" @submit="handleSubmit">
+
+       <a-form-item v-bind="formItemLayout"  label="Username">
+        <a-input
+          v-decorator="[
+            'username',
+            {
+              rules: [{ required: true, message: 'Username is required!' }],
+            },
+          ]"
+        />
+      </a-form-item>
+
+    <a-form-item v-bind="formItemLayout" label="E-mail">
+      <a-input
+        v-decorator="[
+          'email',
+          {
+            rules: [
+              {
+                type: 'email',
+                message: 'The input is not valid E-mail!',
+              },
+              {
+                required: true,
+                message: 'Please input your E-mail!',
+              },
+            ],
+          },
+        ]"
+      />
+    </a-form-item>
+
+
+       <a-form-item v-bind="formItemLayout" label= "Text-area">
+        <a-textarea placeholder="Basic usage" :rows="4" />
+       </a-form-item>
+
+      <a-form-item   v-bind="formItemLayout">
+     <a-button type="primary" html-type="submit">
+        Submit
+      </a-button>
+       </a-form-item>
+       
+    </a-form>
+    </div>
       </a-layout-footer>
     </a-layout>
   </a-layout>
@@ -151,9 +208,30 @@ export default {
        isMorning: hours < 12,
       isAfternoon: hours >= 12 && hours < 18,
       isEvening: hours >= 18,
-      activeColor : 'rgb(245, 33, 33)',
+      activeColor : 'rgb(236, 98, 98)',
  
-  
+     formItemLayout: {
+        labelCol: {
+          xs: { span: 0},//24
+          sm: { span: 2 },//8
+        },
+        wrapperCol: {
+          xs: { span: 24 },
+          sm: { span: 16 },
+        },
+      },
+      tailFormItemLayout: {
+        wrapperCol: {
+          xs: {
+            span: 24,
+            offset: 0,
+          },
+          sm: {
+            span: 16,
+            offset: 8,
+          },
+        },
+      },
    }
     
 },
@@ -164,10 +242,20 @@ computed: { // will be re-computed when the image property changes
      //var overlay = 'linear-gradient(180deg,rgba(12,10,54,0.2),rgba(225,0,0,0.2),rgba(255,0,0,0.3) ) ';
      //var overlay = 'linear-gradient(to bottom right ,rgba(12,10,54,0.5),rgba(12,10,54,0.6))' 
      //var overlay = 'linear-gradient(to bottom , rgba(255, 0, 0, 0.1), rgba(255,0,52,0.2),rgba(12, 10, 52, 0.3))';
-     var overlay = 'linear-gradient(to top left ,rgba(225,0,0,0.2),rgba(255,0,0,0.5) 50% ,rgba(12,10,54,0.7) 50%,rgba(12,10,54,0.7))';
-      return 'background-image:'+ overlay +' , url(' + require('@/assets/tracey.png') + ') ;';
+     var overlay = 'linear-gradient(to top left ,rgba(225,0,0,0.5),rgba(255,0,0,0.5) 50% ,rgba(12,10,54,0.5) 50%,rgba(12,10,54,0.5)40%)';
+      return 'background-image:'+ overlay +' , url(' + require('@/assets/traceyy.jpg') + ') ;';
     },
 
+   methods: {
+    handleSubmit(e) {
+      e.preventDefault();
+      this.form.validateFieldsAndScroll((err, values) => {
+        if (!err) {
+          console.log('Received values of form: ', values);
+        }
+      });
+    },
+   },
 
 }
 
@@ -189,16 +277,18 @@ computed: { // will be re-computed when the image property changes
  }
 
 .backGround{
-    background-position: center center;
-    background-size:cover;
-    height:100vh;
+  background-repeat: no-repeat;
+  background-position:0 50%;
+  background-size: cover;
+  height:100vh;
 }
 
 .cover-text {
   text-align: start;
   position: absolute;
   top: 40%;
-  left: 50%;
+  left: 60%;
+  padding: 20px; 
   transform: translate(-10%, -10%);
 
 }
@@ -227,34 +317,61 @@ h1{
 
 }
 
+h4{
+  font-size: 1.2em;
+}
+
 .down-button{
-    margin: 50%;
+    margin: 40%;
+    margin-left: -10%;
     position: -ms-page;
     color: aliceblue;
     font-size:50px;
  }
 
 #section-two{
-  background-color:rgb(241, 144, 144) ;
   background-position: cover;
+  background-color:#fff
 }
+
+img{
+ 
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: 10px;
+  inline-size: 100%;
+
+}
+
+img:hover {
+        transform: scale(1.01);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+       
+      }
 
 .about{
   color:black;
   text-align: left;
-  font-size: 25px;
-  margin-left: 5px;
-  margin-top: 10px;
+  font-size: 20px;
+  text-align: center;
+  border: 2px solid rgb(236, 98, 98);
+  border-radius: 10px;
+  width:40%;
+  color : rgb(236, 98, 98);
+  margin-left: 25%;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
 
 .about_me{
   color:black;
-  text-align: left;
-  margin-left: 5px;
+  text-align:justify;
+  font-size: 1.2em;
+  margin-left: 5%;
+  margin-right: 7%;
 }
 
-img{
-inline-size: 95%;
-}
+
+
 
 </style>
