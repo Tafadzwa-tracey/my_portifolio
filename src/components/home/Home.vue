@@ -4,10 +4,16 @@
 
        <vue-avatar class= "logo" :username="'Tracey'" :src="require('@/assets/tracey.png')"></vue-avatar>
       <a-menu theme="dark" mode="inline" :default-selected-keys="['1']">
-        <a-menu-item class="menu-items" key="1" :style="{ backgroundColor: activeColor }" >
+
+
+        <a-menu-item class="menu-items" key="1" :style="{ backgroundColor:'rgb(236, 98, 98)'}" >
+           <router-link  to ="/projects"> 
           <a-icon type="project" />
           <span class="nav-text">Projects</span>
+          </router-link>
         </a-menu-item>
+
+
         <a-menu-item class="menu-items" key="2">
           <a-icon type="user" />
           <span class="nav-text">About</span>
@@ -53,9 +59,6 @@
               Email
             </span>
           </router-link>
-      
-          
-
         </a-menu-item>
 
       </a-menu>
@@ -94,30 +97,8 @@
         </h4>
       </a-col>
     </a-row>
-    <!--
-    <a-row>
-      <a-col :span="12" >
-        <h2 class="about_me">Language</h2>
-        <h4 class="about_me">Python</h4>
-         <h4 class="about_me">Python</h4>
-        <h4 class="about_me">Python</h4>
-         <h4 class="about_me">Python</h4>
-      </a-col>
-      <a-col :span="12">
-        <h2 class="about_me">Education</h2>
-        <h4 class="about_me">Ocean University of China</h4>
-        <h4 class="about_me">Ocean University of China</h4>
-        <h4 class="about_me">Ocean University of China</h4>
-        <h4 class="about_me">Ocean University of China</h4>
-      </a-col>
-    </a-row>-->
+
   </div>
-<!--
- <a-row>
-   <a-col :span ="24">
-     <h1 class=projects> </h1>
-   </a-col>
- </a-row>-->
     <a-row type = "flex" justify = "space-inbetween" :style="{marginTop:'50px'}">
      
       <a-col :span="11">
@@ -150,8 +131,8 @@
         <div id = "section-three" >
     <a-form :form="form" @submit="handleSubmit">
 
-       <a-form-item v-bind="formItemLayout"  label="Username">
-        <a-input
+       <a-form-item v-bind="formItemLayout"  label="Username" >
+        <a-input   :style="{backgroundColor:'white'}"
           v-decorator="[
             'username',
             {
@@ -162,7 +143,7 @@
       </a-form-item>
 
     <a-form-item v-bind="formItemLayout" label="E-mail">
-      <a-input
+      <a-input  :style="{backgroundColor:'white'}"
         v-decorator="[
           'email',
           {
@@ -183,7 +164,7 @@
 
 
        <a-form-item v-bind="formItemLayout" label= "Text-area">
-        <a-textarea placeholder="Basic usage" :rows="4" />
+        <a-textarea placeholder="Basic usage" :rows="4"   :style="{backgroundColor:'white'}" />
        </a-form-item>
 
       <a-form-item   v-bind="formItemLayout">
@@ -208,7 +189,6 @@ export default {
        isMorning: hours < 12,
       isAfternoon: hours >= 12 && hours < 18,
       isEvening: hours >= 18,
-      activeColor : 'rgb(236, 98, 98)',
  
      formItemLayout: {
         labelCol: {
@@ -243,7 +223,7 @@ computed: { // will be re-computed when the image property changes
      //var overlay = 'linear-gradient(to bottom right ,rgba(12,10,54,0.5),rgba(12,10,54,0.6))' 
      //var overlay = 'linear-gradient(to bottom , rgba(255, 0, 0, 0.1), rgba(255,0,52,0.2),rgba(12, 10, 52, 0.3))';
      var overlay = 'linear-gradient(to top left ,rgba(225,0,0,0.5),rgba(255,0,0,0.5) 50% ,rgba(12,10,54,0.5) 50%,rgba(12,10,54,0.5)40%)';
-      return 'background-image:'+ overlay +' , url(' + require('@/assets/traceyy.jpg') + ') ;';
+      return 'background-image:'+ overlay +' , url(' + require('@/assets/traceyy.jpg') + ') , url(' + require('@/assets/white.jpg') + ');';
     },
 
    methods: {
@@ -264,7 +244,8 @@ computed: { // will be re-computed when the image property changes
 
 </script>
 
-<style>
+<style >
+
 #components-layout-demo-fixed-sider .logo {
   height: 32px;
   margin: 16px;
@@ -277,9 +258,9 @@ computed: { // will be re-computed when the image property changes
  }
 
 .backGround{
-  background-repeat: no-repeat;
-  background-position:0 50%;
-  background-size: cover;
+  background-repeat: no-repeat , no-repeat;
+  background-position:50% 100%;
+  background-position: right ,left ;
   height:100vh;
 }
 
@@ -298,11 +279,8 @@ p {
   padding: 20px;
   padding-top: 0px;
   padding-left: 0px;
-  background:linear-gradient(to bottom right ,white ,rgb(245, 165, 165)) ;
-  background-color: white;
-  background-clip:text;
-   -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  color: white;
+
 }
 
 h3 {
