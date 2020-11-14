@@ -15,9 +15,13 @@
 
 
         <a-menu-item class="menu-items" key="2">
+          <router-link  to ="/about"> 
           <a-icon type="user" />
           <span class="nav-text">About</span>
+           </router-link>
         </a-menu-item>
+
+
         <a-menu-item class="menu-items" key="3">
           <a-icon type="phone" />
           <span class="nav-text">Contacts</span>
@@ -244,7 +248,7 @@ computed: { // will be re-computed when the image property changes
 
 </script>
 
-<style >
+<style scoped>
 
 #components-layout-demo-fixed-sider .logo {
   height: 32px;
@@ -330,11 +334,12 @@ img:hover {
 .about{
   color:black;
   text-align: left;
-  font-size: 20px;
+  font-size: 1.5em;
   text-align: center;
   border: 2px solid rgb(236, 98, 98);
   border-radius: 10px;
   width:40%;
+  height:auto;
   color : rgb(236, 98, 98);
   margin-left: 25%;
   margin-top: 3%;

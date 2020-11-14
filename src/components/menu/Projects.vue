@@ -62,7 +62,13 @@
 }
 
 img{
-    width: 100%;
+   inline-size: 100%;
 
 }
+
+img:hover {
+        transform: scale(1.01);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+       
+      }
 </style>
