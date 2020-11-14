@@ -20,19 +20,45 @@
         <h1 class="text-heading">Web Developer</h1>
         <a-row>
       <a-col :span="12">
-        <h4><a-icon type="right" :style="{color:' rgb(236, 98, 98)',marginRight:'2%'}" /><b>Birthday:</b>14 September 1998</h4>
-        <h4><a-icon type="right" :style="{color:'rgb(236, 98, 98)',marginRight:'2%'}" /><b>Phone:</b>+86 176 6403 7679</h4>
-        <h4><a-icon type="right" :style="{color:'rgb(236, 98, 98)',marginRight:'2%'}" /><b>City:</b>Laoshan,Shangdong,China</h4>
+        <h4><a-icon type="right" :style="{color:' #1890ff',marginRight:'2%'}" /><b>Birthday:</b>14 September 1998</h4>
+        <h4><a-icon type="right" :style="{color:'#1890ff',marginRight:'2%'}" /><b>Phone:</b>+86 176 6403 7679</h4>
+        <h4><a-icon type="right" :style="{color:'#1890ff',marginRight:'2%'}" /><b>City:</b>Laoshan,Shangdong,China</h4>
       </a-col>
       <a-col :span="12">
-        <h4><a-icon type="right" :style="{color:'rgb(236, 98, 98)',marginRight:'2%'}" /><b>Age:</b>22</h4>
-        <h4><a-icon type="right" :style="{color:' rgb(236, 98, 98)',marginRight:'2%'}" /><b>Degree:</b>Bachelor's</h4>
-        <h4><a-icon type="right" :style="{color:' rgb(236, 98, 98)',marginRight:'2%'}" /><b>Freelance:</b>Available</h4>
+        <h4><a-icon type="right" :style="{color:'#1890ff',marginRight:'2%'}" /><b>Age:</b>22</h4>
+        <h4><a-icon type="right" :style="{color:'#1890ff',marginRight:'2%'}" /><b>Degree:</b>Bachelor's</h4>
+        <h4><a-icon type="right" :style="{color:'#1890ff',marginRight:'2%'}" /><b>Freelance:</b>Available</h4>
       </a-col>
 
-        <a-col :span="24">
 
-        </a-col>
+        <a-col :span="24">
+        <h1 class="text-heading">Skills</h1>
+        <a-row type="flex">
+        <a-col flex="50px"> <h4 :style ="{textAlign:'right' ,marginTop:'24%',marginRight:'5%'}"> <b>Html:</b> </h4> </a-col>
+        <a-col flex="auto"><k-progress :percent="100" :style ="{marginTop:'2%'}"  :line-height="8"></k-progress></a-col>
+        </a-row>
+
+         <a-row type="flex">
+        <a-col flex="50px"> <h4 :style ="{textAlign:'right' ,marginTop:'24%'}"> <b>CSS:</b> </h4> </a-col>
+        <a-col flex="auto"><k-progress :percent="95" :style ="{marginTop:'2%'}"  :line-height="8"></k-progress></a-col>
+        </a-row>
+        
+        <a-row type="flex">
+        <a-col flex="50px"> <h4 :style ="{textAlign:'right' ,marginTop:'24%'}"> <b>Vue:</b> </h4> </a-col>
+        <a-col flex="auto"><k-progress :percent="85" :style ="{marginTop:'2%'}" :line-height="8"></k-progress></a-col>
+        </a-row>
+        
+          <a-row type="flex">
+        <a-col flex="50px"> <h4 :style ="{textAlign:'right' ,marginTop:'24%'}"> <b>JScript:</b> </h4> </a-col>
+        <a-col flex="auto"><k-progress :percent="80" :style ="{marginTop:'2%'}" :line-height="8"></k-progress></a-col>
+        </a-row>
+
+        <a-row type="flex">
+        <a-col flex="50px"> <h4 :style ="{textAlign:'right' ,marginTop:'24%'}"> <b>php:</b> </h4> </a-col>
+        <a-col flex="auto"><k-progress :percent="70" :style ="{marginTop:'2%'}"  :line-height="8"></k-progress></a-col>
+        </a-row>
+
+        </a-col> 
 
     </a-row>
       </a-col>
@@ -49,8 +75,8 @@
     text-align: left;
     color: black;
     margin: 2% 5%;
-     border-bottom: 2px solid rgb(236, 98, 98);  /*#1890ff */
-    width: 6%;
+     /*border-bottom: 2px solid  rgb(236, 98, 98);  #1890ff 
+    width: 6%;*/
 
 }
 
@@ -71,7 +97,7 @@ img{
 }
 
 .text-heading{
-   border-bottom: 2px solid rgb(236, 98, 98);
+   /* border-bottom: 2px solid  rgb(236, 98, 98) ; */
    text-align: center;
    margin-right: 35%;
    margin-left: 35%;

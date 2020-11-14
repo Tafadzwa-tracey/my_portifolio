@@ -6,10 +6,13 @@ import VueResource from 'vue-resource';
 import VueAvatar from '@lossendae/vue-avatar'
 import router from './router';
 import VueScrollTo from 'vue-scrollto'
+import KProgress from 'k-progress';
 
 Vue.use(VueResource);
 Vue.component('vue-avatar', VueAvatar)
 Vue.use(VueScrollTo)
+Vue.component('k-progress', KProgress);
+
 
 Vue.config.productionTip = false
 const config = require('../config');
