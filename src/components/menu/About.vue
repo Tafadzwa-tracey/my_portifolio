@@ -45,17 +45,17 @@
         
         <a-row type="flex">
         <a-col flex="50px"> <h4 :style ="{textAlign:'right' ,marginTop:'24%'}"> <b>Vue:</b> </h4> </a-col>
-        <a-col flex="auto"><k-progress :percent="85" :style ="{marginTop:'2%'}" :line-height="8"></k-progress></a-col>
+        <a-col flex="auto"><k-progress :percent="75" :style ="{marginTop:'2%'}" :line-height="8"></k-progress></a-col>
         </a-row>
         
           <a-row type="flex">
         <a-col flex="50px"> <h4 :style ="{textAlign:'right' ,marginTop:'24%'}"> <b>JScript:</b> </h4> </a-col>
-        <a-col flex="auto"><k-progress :percent="80" :style ="{marginTop:'2%'}" :line-height="8"></k-progress></a-col>
+        <a-col flex="auto"><k-progress :percent="70" :style ="{marginTop:'2%'}" :line-height="8"></k-progress></a-col>
         </a-row>
 
         <a-row type="flex">
         <a-col flex="50px"> <h4 :style ="{textAlign:'right' ,marginTop:'24%'}"> <b>php:</b> </h4> </a-col>
-        <a-col flex="auto"><k-progress :percent="70" :style ="{marginTop:'2%'}"  :line-height="8"></k-progress></a-col>
+        <a-col flex="auto"><k-progress :percent="65" :style ="{marginTop:'2%'}"  :line-height="8"></k-progress></a-col>
         </a-row>
 
         </a-col> 
@@ -66,8 +66,110 @@
        <img :src="require('@/assets/traceyy.jpg')" alt="Tracey" >
       </a-col>
     </a-row>
+
+    <a-layout-footer>
+    <div id = "section-three" >
+    <a-form :form="form" @submit="handleSubmit">
+
+       <a-form-item v-bind="formItemLayout"  label="Username" >
+        <a-input   :style="{backgroundColor:'white'}"
+          v-decorator="[
+            'username',
+            {
+              rules: [{ required: true, message: 'Username is required!' }],
+            },
+          ]"
+        />
+      </a-form-item>
+
+    <a-form-item v-bind="formItemLayout" label="E-mail">
+      <a-input  :style="{backgroundColor:'white'}"
+        v-decorator="[
+          'email',
+          {
+            rules: [
+              {
+                type: 'email',
+                message: 'The input is not valid E-mail!',
+              },
+              {
+                required: true,
+                message: 'Please input your E-mail!',
+              },
+            ],
+          },
+        ]"
+      />
+    </a-form-item>
+
+
+       <a-form-item v-bind="formItemLayout" label= "Text-area">
+        <a-textarea placeholder="Basic usage" :rows="4"   :style="{backgroundColor:'white'}" />
+       </a-form-item>
+
+      <a-form-item   v-bind="formItemLayout">
+     <a-button type="primary" html-type="submit"  onclick="location.href='mailto:tafadzwatracey@gmail.com';">
+        Submit
+      </a-button>
+       </a-form-item>
+       
+    </a-form>
+    </div>
+      </a-layout-footer>
+
   </div>
 </template>
+
+
+<script>
+export default {
+  name:'app',
+ data() {
+   return{
+      
+     formItemLayout: {
+        labelCol: {
+          xs: { span: 0},//24
+          sm: { span: 2 },//8
+        },
+        wrapperCol: {
+          xs: { span: 24 },
+          sm: { span: 16 },
+        },
+      },
+      tailFormItemLayout: {
+        wrapperCol: {
+          xs: {
+            span: 24,
+            offset: 0,
+          },
+          sm: {
+            span: 16,
+            offset: 8,
+          },
+        },
+      },
+   }
+    
+},
+
+   methods: {
+    handleSubmit(e) {
+      e.preventDefault();
+      this.form.validateFieldsAndScroll((err, values) => {
+        if (!err) {
+          console.log('Received values of form: ', values);
+        }
+      });
+    },
+   },
+
+}
+
+
+
+
+</script>
 
 <style  scoped>
 .about_heading{

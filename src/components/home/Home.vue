@@ -22,11 +22,6 @@
         </a-menu-item>
 
 
-        <a-menu-item class="menu-items" key="3">
-          <a-icon type="phone" />
-          <span class="nav-text">Contacts</span>
-        </a-menu-item>
-     
         <a-menu-item class="menu-items" key="4">
         <a :href="'https://twitter.com/Tracey02189951?s=09'">
           <a-icon type="twitter" />
@@ -71,7 +66,7 @@
      
       <a-layout-content :style="{ margin: '0 16px 0', overflow: 'initial' }">
         <div  class="backGround"  :style ="productStyle">
-         
+              <p :style="{textAlign:'right' ,margin:'2%',paddingTop:'0.5%'}">+86 17664037679</p>
                <div class="cover-text">
                   <p v-if="isMorning">Good morning!</p>
                   <p v-if="isAfternoon">Good afternoon!</p>
@@ -172,7 +167,7 @@
        </a-form-item>
 
       <a-form-item   v-bind="formItemLayout">
-     <a-button type="primary" html-type="submit">
+     <a-button type="primary" html-type="submit"  onclick="location.href='mailto:tafadzwatracey@gmail.com';">
         Submit
       </a-button>
        </a-form-item>
@@ -230,6 +225,8 @@ computed: { // will be re-computed when the image property changes
       return 'background-image:'+ overlay +' , url(' + require('@/assets/traceyy.jpg') + ') , url(' + require('@/assets/white.jpg') + ');';
     },
 
+  },
+
    methods: {
     handleSubmit(e) {
       e.preventDefault();
@@ -241,7 +238,7 @@ computed: { // will be re-computed when the image property changes
     },
    },
 
-}
+
 
 }
 
