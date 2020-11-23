@@ -66,7 +66,7 @@
      
       <a-layout-content :style="{ margin: '0 16px 0', overflow: 'initial' }">
         <div  class="backGround"  :style ="productStyle">
-              <p :style="{textAlign:'right' ,margin:'2%',paddingTop:'0.5%'}">+86 17664037679</p>
+              <p :style="{textAlign:'right',paddingTop:'0.5%',paddingRight:'5%'}">+86 17664037679</p>
                <div class="cover-text">
                   <p v-if="isMorning">Good morning!</p>
                   <p v-if="isAfternoon">Good afternoon!</p>
