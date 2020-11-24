@@ -17,6 +17,7 @@ Vue.component('k-progress', KProgress);
 Vue.config.productionTip = false
 const config = require('../config');
 window.config = config;
+
 Vue.use(Antd);
 
 
