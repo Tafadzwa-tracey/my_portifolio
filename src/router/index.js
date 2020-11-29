@@ -18,6 +18,6 @@ export default new VueRouter({
         {path:'/about',component:About,name:"about"},
   
       ],
-      mode:'history'
+      mode:'hash'
 
 })

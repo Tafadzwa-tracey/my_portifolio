@@ -177,7 +177,7 @@
       </a-layout-footer>
     </a-layout>
   </a-layout>
-</template>
+ </template>
 
 <script>
  var hours = new Date().getHours();
