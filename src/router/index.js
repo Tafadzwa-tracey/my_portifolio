@@ -12,7 +12,7 @@ Vue.use(VueRouter);
 
 export default new VueRouter({
     routes:[
-        {path:"",component:Home,name:"home"},
+        {path:"/",component:Home,name:"home"},
         {path:'/mail',component:Mail,name:"mail"},
         {path:'/projects',component:Projects,name:"projects"},
         {path:'/about',component:About,name:"about"},

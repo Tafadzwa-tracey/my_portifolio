@@ -13,5 +13,5 @@ cd dist
 git init
 git add -A
 git commit -m 'deploy'
-git push -f git@github.com:Tafadzwa-tracey/Tracey-portifolio.git master:gh-pages
+git push -f git@github.com:Tafadzwa-tracey/my_portifolio.git master:gh-pages
 cd -
