@@ -1,11 +1,8 @@
 <template>
   <div id="app">
     
-    <router-view >
-      <Home>
-        
-      </Home>
-    </router-view>
+      <Home/>
+   
   </div>
 </template>
 
