@@ -133,8 +133,8 @@ export default {
       
      formItemLayout: {
         labelCol: {
-          xs: { span: 0},//24
-          sm: { span: 2 },//8
+          xs: { span: 10},//24
+          sm: { span: 6 },//8
         },
         wrapperCol: {
           xs: { span: 24 },

@@ -2,7 +2,7 @@
   <a-layout id="components-layout-demo-fixed-sider" >
     <a-layout-sider :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }">
 
-       <vue-avatar class= "logo" :username="'Tracey'" :src="require('@/assets/tracey.png')"></vue-avatar>
+      <vue-avatar class= "logo" :username="'Tracey'" :src="require('@/assets/tracey.png')"></vue-avatar>
       <a-menu theme="dark" mode="inline" :default-selected-keys="['1']">
 
 
@@ -180,6 +180,7 @@
  </template>
 
 <script>
+  
  var hours = new Date().getHours();
 export default {
   name:'app',
@@ -191,8 +192,8 @@ export default {
  
      formItemLayout: {
         labelCol: {
-          xs: { span: 0},//24
-          sm: { span: 2 },//8
+          xs: { span: 10},//24
+          sm: { span: 6},//8
         },
         wrapperCol: {
           xs: { span: 24 },
@@ -246,6 +247,12 @@ computed: { // will be re-computed when the image property changes
 </script>
 
 <style scoped>
+
+@media only screen and (max-width: 768px) { 
+  .nav_item { 
+    display: none !important; 
+    }
+     }
 
 #components-layout-demo-fixed-sider .logo {
   height: 32px;
@@ -317,7 +324,7 @@ img{
  
   margin-right: 10%;
   margin-left: 10%;
-  padding: 10px;
+  padding: 5%;
   inline-size: 100%;
 
 }
