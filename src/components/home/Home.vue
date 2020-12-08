@@ -1,12 +1,17 @@
 <template>
-  <a-layout id="components-layout-demo-fixed-sider" >
-    <a-layout-sider :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0 }">
-
+  <a-layout id="components-layout-demo-responsive">
+    <a-layout-sider
+      breakpoint="lg"
+      collapsed-width="0"
+      @collapse="onCollapse"
+      @breakpoint="onBreakpoint"
+    >
+       <!-- <div class="logo" />  -->
       <vue-avatar class= "logo" :username="'Tracey'" :src="require('@/assets/tracey.png')"></vue-avatar>
       <a-menu theme="dark" mode="inline" :default-selected-keys="['1']">
 
 
-        <a-menu-item class="menu-items" key="1" :style="{ backgroundColor:'rgb(236, 98, 98)'}" >
+        <a-menu-item  class="menu-items" key="1" :style="{ backgroundColor:'rgb(236, 98, 98)'}" >
            <router-link  to ="/projects"> 
           <a-icon type="project" />
           <span class="nav-text">Projects</span>
@@ -14,7 +19,7 @@
         </a-menu-item>
 
 
-        <a-menu-item class="menu-items" key="2">
+        <a-menu-item  class="menu-items" key="2">
           <router-link  to ="/about"> 
           <a-icon type="user" />
           <span class="nav-text">About</span>
@@ -62,10 +67,10 @@
 
       </a-menu>
     </a-layout-sider>
-    <a-layout :style="{ marginLeft: '200px' }">
-     
-      <a-layout-content :style="{ margin: '0 16px 0', overflow: 'initial' }">
-        <div  class="backGround"  :style ="productStyle">
+    <a-layout>
+      <a-layout-content :style="{ margin: '0 16px 0' }">
+        <div :style="{ background: '#fff', minHeight: '360px' }">
+           <div   class="backGround"  :style ="productStyle">
               <p :style="{textAlign:'right',paddingTop:'0.5%',paddingRight:'5%'}">+86 17664037679</p>
                <div class="cover-text">
                   <p v-if="isMorning">Good morning!</p>
@@ -98,7 +103,7 @@
     </a-row>
 
   </div>
-    <a-row type = "flex" justify = "space-inbetween" :style="{marginTop:'50px'}">
+    <a-row type = "flex" justify = "space-inbetween" :style="{marginTop:'3%'}">
      
       <a-col :span="11">
        <h4>My Portifolio</h4>
@@ -123,11 +128,11 @@
 
       </a-row>
       </div>
+        </div>
       </a-layout-content>
 
-
-      <a-layout-footer>
-        <div id = "section-three" >
+      <a-layout-footer style="textAlign: center">
+         <div id = "section-three" >
     <a-form :form="form" @submit="handleSubmit">
 
        <a-form-item v-bind="formItemLayout"  label="Username" >
@@ -177,11 +182,10 @@
       </a-layout-footer>
     </a-layout>
   </a-layout>
- </template>
+</template>
 
 <script>
-  
- var hours = new Date().getHours();
+var hours = new Date().getHours();
 export default {
   name:'app',
  data() {
@@ -219,9 +223,6 @@ export default {
 
 computed: { // will be re-computed when the image property changes
   productStyle () {
-     //var overlay = 'linear-gradient(180deg,rgba(12,10,54,0.2),rgba(225,0,0,0.2),rgba(255,0,0,0.3) ) ';
-     //var overlay = 'linear-gradient(to bottom right ,rgba(12,10,54,0.5),rgba(12,10,54,0.6))' 
-     //var overlay = 'linear-gradient(to bottom , rgba(255, 0, 0, 0.1), rgba(255,0,52,0.2),rgba(12, 10, 52, 0.3))';
      var overlay = 'linear-gradient(to top left ,rgba(225,0,0,0.5),rgba(255,0,0,0.5) 50% ,rgba(12,10,54,0.5) 50%,rgba(12,10,54,0.5)40%)';
       return 'background-image:'+ overlay +' , url(' + require('@/assets/traceyy.jpg') + ') , url(' + require('@/assets/white.jpg') + ');';
     },
@@ -229,6 +230,13 @@ computed: { // will be re-computed when the image property changes
   },
 
    methods: {
+    onCollapse(collapsed, type) {
+      console.log(collapsed, type);
+    },
+    onBreakpoint(broken) {
+      console.log(broken);
+    },
+  
     handleSubmit(e) {
       e.preventDefault();
       this.form.validateFieldsAndScroll((err, values) => {
@@ -237,28 +245,17 @@ computed: { // will be re-computed when the image property changes
         }
       });
     },
-   },
-
-
+   }
 
 }
-
 
 </script>
 
 <style scoped>
-
-@media only screen and (max-width: 768px) { 
-  .nav_item { 
-    display: none !important; 
-    }
-     }
-
-#components-layout-demo-fixed-sider .logo {
+#components-layout-demo-responsive .logo {
   height: 32px;
+  background: rgba(255, 255, 255, 0.2);
   margin: 16px;
-
-
 }
 
  .menu-items {
@@ -277,14 +274,14 @@ computed: { // will be re-computed when the image property changes
   position: absolute;
   top: 40%;
   left: 60%;
-  padding: 20px; 
+  padding: 5%; 
   transform: translate(-10%, -10%);
 
 }
 
 p {
-  font-size: 15px;
-  padding: 20px;
+  font-size: 1.2em;
+  padding: 5%;
   padding-top: 0px;
   padding-left: 0px;
   color: white;
@@ -292,13 +289,13 @@ p {
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 2em;
   color: white;
 }
 
 
 h1{
-  font-size: 50px;
+  font-size: 3.5em;
   color: white;
 
 }
@@ -308,11 +305,11 @@ h4{
 }
 
 .down-button{
-    margin: 40%;
+    margin: 20%;
     margin-left: -10%;
     position: -ms-page;
     color: aliceblue;
-    font-size:50px;
+    font-size:4em;
  }
 
 #section-two{

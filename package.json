@@ -16,6 +16,7 @@
     "core-js": "^3.6.5",
     "k-progress": "^1.5.0",
     "vue": "^2.6.11",
+    "vue-mq": "^1.0.1",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.4.5",
     "vue-scrollto": "^2.20.0"
