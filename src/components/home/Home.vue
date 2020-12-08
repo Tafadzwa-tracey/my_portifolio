@@ -5,6 +5,7 @@
       collapsed-width="0"
       @collapse="onCollapse"
       @breakpoint="onBreakpoint"
+ 
     >
        <!-- <div class="logo" />  -->
       <vue-avatar class= "logo" :username="'Tracey'" :src="require('@/assets/tracey.png')"></vue-avatar>
@@ -105,25 +106,35 @@
   </div>
     <a-row type = "flex" justify = "space-inbetween" :style="{marginTop:'3%'}">
      
+    
+
+       <a-col :span="11">
+        <a-divider orientation="center">
+         Smart Home System
+        </a-divider>
+        <img :src="require('@/assets/system.png')" alt="Smart Home System" >
+      </a-col>
+
       <a-col :span="11">
-       <h4>My Portifolio</h4>
-        <img :src="require('@/assets/myp.png')" alt="My Portifolio" :style="{height :'87%'}">
+        <a-divider orientation="center">
+         Stackoverflow Clone
+        </a-divider>
+        <img :src="require('@/assets/overflow.png')" alt="Stackoverflow Clone">
+      </a-col>
+
+      <a-col :span="11">
+      <a-divider orientation="center">
+         My Portifolio
+        </a-divider>
+        <img :src="require('@/assets/myp.png')" alt="My Portifolio">
       </a-col>
       
 
        <a-col :span="11">
-        <h4>Smart Home System</h4>
-        <img :src="require('@/assets/system.png')" alt="Smart Home System" :style="{height :'87%'}">
-      </a-col>
-
-      <a-col :span="11">
-        <h4>Stackoverflow Clone</h4>
-        <img :src="require('@/assets/overflow.png')" alt="Stackoverflow Clone" :style="{height :'87%'}">
-      </a-col>
-
-       <a-col :span="11">
-       <h4>Icecream App</h4>
-        <img :src="require('@/assets/ice.png')" alt="Icecream App" :style="{height :'87%'}">
+        <a-divider orientation="center">
+        Icecream App
+        </a-divider>
+        <img :src="require('@/assets/ice.png')" alt="Icecream App" >
       </a-col>
 
       </a-row>
@@ -261,6 +272,9 @@ computed: { // will be re-computed when the image property changes
  .menu-items {
  text-align: left;
  }
+ .alayout{
+   margin-left:200px;
+ }
 
 .backGround{
   background-repeat: no-repeat , no-repeat;
@@ -269,15 +283,18 @@ computed: { // will be re-computed when the image property changes
   height:100vh;
 }
 
+
+
 .cover-text {
   text-align: start;
-  position: absolute;
+  position:absolute;
   top: 40%;
-  left: 60%;
+  left:60%; 
   padding: 5%; 
   transform: translate(-10%, -10%);
 
 }
+
 
 p {
   font-size: 1.2em;
@@ -313,8 +330,9 @@ h4{
  }
 
 #section-two{
-  background-position: cover;
-  background-color:#fff
+ background-position: auto;
+ background-color:#fff;
+ overflow:hidden;
 }
 
 img{
@@ -331,6 +349,12 @@ img:hover {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
        
       }
+
+.img_labels{
+ 
+  margin-top:15%;
+
+}
 
 .about{
   color:black;
@@ -356,6 +380,14 @@ img:hover {
 }
 
 
-
+@media (max-width: 360px) {
+      .cover-text {
+        left: 20% !important;
+      }
+      .down-button{
+        margin-left:30%  !important;
+      }
+     
+    }
 
 </style>
