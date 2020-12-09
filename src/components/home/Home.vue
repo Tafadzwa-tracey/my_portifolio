@@ -388,6 +388,9 @@ img:hover {
 }
 
 
+    
+  
+
 @media (max-width: 550px) {
      h1{
        font-size:2em;
@@ -396,15 +399,9 @@ img:hover {
       font-size:1.5em;
     }
     .cover-text{
-      margin-top:40%;
-      top:60%;
+      margin-top:30%;
+      transform:translate(-10%,40%);
     }
-    .down-button{
-       margin-top:50%;
-      
-    }
-    
-    
      
     } 
 
