@@ -177,7 +177,7 @@ export default {
     text-align: left;
     color: black;
     margin: 0 5%;
-      border-bottom: 2px solid  rgb(236, 98, 98);  
+    border-bottom: 2px solid  rgb(236, 98, 98);  
     width: 4%; 
 
 }

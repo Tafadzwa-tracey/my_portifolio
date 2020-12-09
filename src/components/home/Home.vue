@@ -73,7 +73,9 @@
         <div :style="{ background: '#fff', minHeight: '360px' }">
            <div   class="backGround"  :style ="productStyle">
               <p :style="{textAlign:'right',paddingTop:'0.5%',paddingRight:'5%'}">+86 17664037679</p>
-               <div class="cover-text">
+               <a-row>
+               <a-col :span="12" :push="12" class="cover-text">
+      
                   <p v-if="isMorning">Good morning!</p>
                   <p v-if="isAfternoon">Good afternoon!</p>
                   <p v-if="isEvening">Good evening!</p>
@@ -83,8 +85,9 @@
                   <router-link to="#" v-scroll-to="'#section-two'">
                   <a-icon type="down-circle"  class="down-button"/>
                   </router-link>
-                
-             </div>
+                </a-col>
+        </a-row>
+               
         </div>
 
         <div  id ="section-two">
@@ -237,7 +240,10 @@ computed: { // will be re-computed when the image property changes
      var overlay = 'linear-gradient(to top left ,rgba(225,0,0,0.5),rgba(255,0,0,0.5) 50% ,rgba(12,10,54,0.5) 50%,rgba(12,10,54,0.5)40%)';
       return 'background-image:'+ overlay +' , url(' + require('@/assets/traceyy.jpg') + ') , url(' + require('@/assets/white.jpg') + ');';
     },
-  
+  // textlign(){
+  //   var overlay =60-(60/this.windowWidth)*100 + "%"
+  //   return 'left:'+overlay+'';
+  // },
 
   },
   
@@ -288,12 +294,12 @@ computed: { // will be re-computed when the image property changes
 
 
 .cover-text {
-  text-align: start;
+  text-align: left;
   position:absolute;
   top: 40%;
-  left:60%; 
-  padding: 5%; 
-  transform: translate(-10%, -10%);
+  padding: 5%;
+  transform:translate(-10%,10%); 
+  
 
 }
 
@@ -324,7 +330,7 @@ h4{
 }
 
 .down-button{
-    margin: 20%;
+    margin: 30%;
     margin-left: -10%;
     position: -ms-page;
     color: aliceblue;
@@ -382,14 +388,27 @@ img:hover {
 }
 
 
-@media (max-width: 760px) {
-      .cover-text {
-        left: 20% !important;
-      }
-      .down-button{
-        margin-left:30%  !important;
-      }
-     
+@media (max-width: 550px) {
+     h1{
+       font-size:2em;
+     }
+    h3{
+      font-size:1.5em;
     }
+    .cover-text{
+      margin-top:40%;
+      top:60%;
+    }
+    .down-button{
+       margin-top:50%;
+      
+    }
+    
+    
+     
+    } 
+
+  
+
 
 </style>
