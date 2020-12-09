@@ -19,12 +19,12 @@
       <a-col :span="15" :push="9">
         <h1 class="text-heading">Web Developer</h1>
         <a-row>
-      <a-col :span="12">
+      <a-col :span="11">
         <h4><b>Birthday:</b>14 September 1998</h4>
-        <h4><b>Phone:</b>+86 176 6403 7679</h4>
+        <h4><b>Phone:</b>+86 17664037679</h4>
         <h4><b>City:</b>Laoshan,Shangdong,China</h4>
       </a-col>
-      <a-col :span="12">
+      <a-col :span="11">
         <h4><b>Age:</b>22</h4>
         <h4><b>Degree:</b>Bachelor's</h4>
         <h4><b>Freelance:</b>Available</h4>
@@ -35,12 +35,12 @@
         <h1 class="text-heading" >Skills</h1>
         <a-row type="flex">
         <a-col flex="50px"> <h4 :style ="{textAlign:'right' ,marginTop:'24%',marginRight:'5%'}"> <b>Html:</b> </h4> </a-col>
-        <a-col flex="auto"><k-progress :percent="100" :style ="{marginTop:'2%'}"  :line-height="8"></k-progress></a-col>
+        <a-col flex="auto"><k-progress :percent="95" :style ="{marginTop:'2%'}"  :line-height="8"></k-progress></a-col>
         </a-row>
 
          <a-row type="flex">
         <a-col flex="50px"> <h4 :style ="{textAlign:'right' ,marginTop:'24%'}"> <b>CSS:</b> </h4> </a-col>
-        <a-col flex="auto"><k-progress :percent="95" :style ="{marginTop:'2%'}"  :line-height="8"></k-progress></a-col>
+        <a-col flex="auto"><k-progress :percent="90" :style ="{marginTop:'2%'}"  :line-height="8"></k-progress></a-col>
         </a-row>
         
         <a-row type="flex">
@@ -176,7 +176,7 @@ export default {
     font-size: 2em;
     text-align: left;
     color: black;
-    margin: 2% 5%;
+    margin: 0 5%;
       border-bottom: 2px solid  rgb(236, 98, 98);  
     width: 4%; 
 
@@ -187,7 +187,7 @@ img{
   margin-right: 5%;
   margin-left: 10%;
   padding: 10px;
-  inline-size: 50%
+  inline-size: 80%;
 
 }
 .text{
@@ -203,6 +203,7 @@ img{
    text-align: center;
    margin-right: 40%;
    margin-left: 15%;
+   margin-top:5%;
    
 }
 p{

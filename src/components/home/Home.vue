@@ -237,8 +237,10 @@ computed: { // will be re-computed when the image property changes
      var overlay = 'linear-gradient(to top left ,rgba(225,0,0,0.5),rgba(255,0,0,0.5) 50% ,rgba(12,10,54,0.5) 50%,rgba(12,10,54,0.5)40%)';
       return 'background-image:'+ overlay +' , url(' + require('@/assets/traceyy.jpg') + ') , url(' + require('@/assets/white.jpg') + ');';
     },
+  
 
   },
+  
 
    methods: {
     onCollapse(collapsed, type) {
@@ -380,7 +382,7 @@ img:hover {
 }
 
 
-@media (max-width: 360px) {
+@media (max-width: 760px) {
       .cover-text {
         left: 20% !important;
       }
