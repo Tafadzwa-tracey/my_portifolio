@@ -5,6 +5,7 @@
       collapsed-width="0"
       @collapse="onCollapse"
       @breakpoint="onBreakpoint"
+      :style="{height:'100vh' ,position:'fixed'}"
  
     >
        <!-- <div class="logo" />  -->
@@ -68,7 +69,7 @@
 
       </a-menu>
     </a-layout-sider>
-    <a-layout>
+    <a-layout class="no-padding" :style="{paddingLeft:'16%',display:'flex' ,justify:'space-inbetween'}">
       <a-layout-content :style="{ margin: '0 16px 0' }">
         <div :style="{ background: '#fff', minHeight: '360px' }">
            <div   class="backGround"  :style ="productStyle">
@@ -401,6 +402,12 @@ img:hover {
     .cover-text{
       margin-top:30%;
       transform:translate(-10%,40%);
+    }
+    .no-padding{
+      padding-left:0  !important;
+      
+      
+      
     }
      
     } 
