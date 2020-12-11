@@ -14,7 +14,7 @@
 
 
         <a-menu-item  class="menu-items" key="1" :style="{ backgroundColor:'rgb(236, 98, 98)'}" >
-          <router-link to="#" v-scroll-to="'#section-three'">
+          <router-link to="#" v-scroll-to="'#section-four'">
           <a-icon type="project" />
           <span class="nav-text">Projects</span>
           </router-link>
@@ -59,7 +59,7 @@
         </a-menu-item>
 
         <a-menu-item class="menu-items" key="8">
-          <router-link  to ="/mail"> 
+          <router-link  to="#" v-scroll-to="'#section-three'"> 
             <a-icon type="mail" />
             <span class="nav-text">
               Email
@@ -125,8 +125,8 @@
       </a-col>
       <a-col :span="11">
         <h4><b>Age:</b>22</h4>
-        <h4><b>Degree:</b>Bachelor's</h4>
         <h4><b>Freelance:</b>Available</h4>
+        <h4><b>Degree:</b>Bachelor's in Computer Science</h4>
       </a-col>
 
       
@@ -248,7 +248,8 @@
   </a-row>
 
 
-<div id="section-three">
+
+<div id="section-four">
 <a-row type = "flex" justify = "space-inbetween"  >
    <a-divider orientation="center" >
       <h1 class= "about">Projects</h1>
@@ -275,11 +276,12 @@
 
 
      <a-col :span="11">
-  <a-card hoverable :style="{padding:'1%' ,marginLeft:'5%',inlineSize:'84%'}">
+  <a-card hoverable :style="{padding:'1%' ,marginLeft:'5%'}">
     <img
       slot="cover"
       alt="Stackoverflow Clone"
       :src="require('@/assets/overflow.png')" 
+      :style="{inlineSize:'88%',marginLeft:'5%'}"
     />
     <template slot="actions" class="ant-card-actions">
        <a-icon key="plus-circle" type="plus-circle" />
@@ -335,7 +337,12 @@
       </a-layout-content>
 
       <a-layout-footer style="textAlign: center">
-         <div id = "section-three" >
+  <div id = "section-three" >
+    <a-row type="flex">
+    <a-col :span="12">
+      <a-divider >
+       <h1 class="about">Email me</h1>
+      </a-divider>
     <a-form :form="form" @submit="handleSubmit">
 
        <a-form-item v-bind="formItemLayout"  label="Username" >
@@ -381,6 +388,19 @@
        </a-form-item>
        
     </a-form>
+    </a-col>
+    <a-col :span="12">
+    <a-divider>
+      <h1 class="about">Contact me</h1>
+    </a-divider>
+    <h4 class="about_me">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+       Facilis dolorum dolorem soluta quidem expedita aperiam aliquid at. 
+      Totam magni ipsum suscipit amet? Autem nemo esse laboriosam ratione nobis mollitia inventore?</h4>
+      <h4 class="about_me" > <a-icon type="environment" :style="{color:'#1890ff',marginRight:'2%'}"/>Laoshan ,Shandong Province China</h4>
+      <h4 class="about_me"> <a-icon type="phone" :style="{color:'#1890ff',marginRight:'2%'}"/>+86 17664037679</h4>
+      <h4 class="about_me"> <a-icon type="mail" :style="{color:'#1890ff',marginRight:'2%'}"/>tafadzwatracey@gmail.com</h4>
+    </a-col>
+    </a-row>
     </div>
       </a-layout-footer>
     </a-layout>
