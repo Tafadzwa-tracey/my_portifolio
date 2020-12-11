@@ -6,22 +6,14 @@ import VueResource from 'vue-resource';
 import VueAvatar from '@lossendae/vue-avatar'
 import router from './router';
 import VueScrollTo from 'vue-scrollto';
-import KProgress from 'k-progress';
-// import VueMq from 'vue-mq';
+// import KProgress from 'k-progress';
+
 
 
 Vue.use(VueResource);
 Vue.component('vue-avatar', VueAvatar);
 Vue.use(VueScrollTo);
-Vue.component('k-progress', KProgress);
-// Vue.use(VueMq ,{
-//   breakpoints:{
-//     sm:450,
-//     md:1250,
-//     lg:Infinity,
-//   },
-//   defaultBreakpoint:'sm'
-// })
+// Vue.component('k-progress', KProgress);
 
 
 

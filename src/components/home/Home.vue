@@ -14,7 +14,7 @@
 
 
         <a-menu-item  class="menu-items" key="1" :style="{ backgroundColor:'rgb(236, 98, 98)'}" >
-           <router-link  to ="/projects"> 
+          <router-link to="#" v-scroll-to="'#section-three'">
           <a-icon type="project" />
           <span class="nav-text">Projects</span>
           </router-link>
@@ -22,10 +22,10 @@
 
 
         <a-menu-item  class="menu-items" key="2">
-          <router-link  to ="/about"> 
+          <router-link to="#" v-scroll-to="'#section-two'"> 
           <a-icon type="user" />
           <span class="nav-text">About</span>
-           </router-link>
+          </router-link>
         </a-menu-item>
 
 
@@ -69,7 +69,7 @@
 
       </a-menu>
     </a-layout-sider>
-    <a-layout class="no-padding" :style="{paddingLeft:'16%',display:'flex' ,justify:'space-inbetween'}">
+    <a-layout class="no-padding" :style="{paddingLeft:'200px',display:'flex' ,justify:'space-inbetween'}">
       <a-layout-content :style="{ margin: '0 16px 0' }">
         <div :style="{ background: '#fff', minHeight: '360px' }">
            <div   class="backGround"  :style ="productStyle">
@@ -87,61 +87,249 @@
                   <a-icon type="down-circle"  class="down-button"/>
                   </router-link>
                 </a-col>
+
+                
         </a-row>
                
         </div>
 
-        <div  id ="section-two">
-         <div>
-    <a-row>
+<div  id ="section-two">
+       
+     <a-row> 
       <a-col :span="24">
-        <h1 class= "about">START FROM THIS TEMPLATE!</h1>
-        <h4 class = "about_me">Hello ! I'm Tracey , a Web developer intrested in both back and
-           front end.Formal studying at Ocean University of China majoring in Computer Science 
+        <!-- <h1 class= "about">START FROM THIS TEMPLATE!</h1> -->
+         <a-divider orientation="center" >
+         <h1 class= "about">About me</h1>
+         </a-divider> 
+        <h4 class = "about_me">Hello ! I'm Tracey , a Web developer intrested in both back and 
+            front end.Formal studying at Ocean University of China majoring in Computer Science 
            has equipped me with creativity and passion needed to participate confidently in various
            projects.I have worked on various projects with languages like javascript ,html and css,
           php and mysql database ,frameworks like vue , laravel and hosting platforms like github.
-          I love designing and building websites constantly adding new skills to my wheelhouse.
-          Below are my projects !!!!!
-        </h4>
+          I love designing and building websites constantly adding new skills to my wheelhouse. 
+        </h4> 
       </a-col>
-    </a-row>
+    </a-row> 
+  
 
-  </div>
-    <a-row type = "flex" justify = "space-inbetween" :style="{marginTop:'3%'}">
-     
-    
-
-       <a-col :span="11">
+ <a-row >
+   <a-col :span="15" :push="9">
+    <a-row type="flex">
         <a-divider orientation="center">
-         Smart Home System
+         Biography
         </a-divider>
-        <img :src="require('@/assets/system.png')" alt="Smart Home System" >
+      <a-col :span="11">
+        <h4><b>Birthday:</b>14 September 1998</h4>
+        <h4><b>Phone:</b>+86 17664037679</h4>
+        <h4><b>City:</b>Laoshan,Shangdong,China</h4>
+      </a-col>
+      <a-col :span="11">
+        <h4><b>Age:</b>22</h4>
+        <h4><b>Degree:</b>Bachelor's</h4>
+        <h4><b>Freelance:</b>Available</h4>
       </a-col>
 
-      <a-col :span="11">
-        <a-divider orientation="center">
-         Stackoverflow Clone
-        </a-divider>
-        <img :src="require('@/assets/overflow.png')" alt="Stackoverflow Clone">
-      </a-col>
-
-      <a-col :span="11">
-      <a-divider orientation="center">
-         My Portifolio
-        </a-divider>
-        <img :src="require('@/assets/myp.png')" alt="My Portifolio">
-      </a-col>
       
-
-       <a-col :span="11">
+        <a-col :span="22">
         <a-divider orientation="center">
-        Icecream App
+         Skills
         </a-divider>
-        <img :src="require('@/assets/ice.png')" alt="Icecream App" >
-      </a-col>
+        <a-row type="flex">
+        <a-col flex="50px"> <h4 :style ="{textAlign:'right' ,marginTop:'24%',marginRight:'5%'}"> <b>Html:</b> </h4> </a-col>
+        <a-col flex="auto"><a-progress :percent="95" :style ="{marginTop:'2.5%'}"  :line-height="8"></a-progress></a-col>
+        </a-row>
+
+         <a-row type="flex">
+        <a-col flex="50px"> <h4 :style ="{textAlign:'right' ,marginTop:'24%'}"> <b>CSS:</b> </h4> </a-col>
+        <a-col flex="auto"><a-progress :percent="90" :style ="{marginTop:'2.5%'}"  :line-height="8"></a-progress></a-col>
+        </a-row>
+        
+        <a-row type="flex">
+        <a-col flex="50px"> <h4 :style ="{textAlign:'right' ,marginTop:'24%'}"> <b>Vue:</b> </h4> </a-col>
+        <a-col flex="auto"><a-progress :percent="75" :style ="{marginTop:'2.5%'}" :line-height="8"></a-progress></a-col>
+        </a-row>
+        
+          <a-row type="flex">
+        <a-col flex="50px"> <h4 :style ="{textAlign:'right' ,marginTop:'24%'}"> <b>JScript:</b> </h4> </a-col>
+        <a-col flex="auto"><a-progress :percent="70" :style ="{marginTop:'3%'}" :line-height="8"></a-progress></a-col>
+        </a-row>
+
+        <a-row type="flex">
+        <a-col flex="50px"> <h4 :style ="{textAlign:'right' ,marginTop:'24%'}"> <b>php:</b> </h4> </a-col>
+        <a-col flex="auto"><a-progress :percent="65" :style ="{marginTop:'2.5%'}"  :line-height="8"></a-progress></a-col>
+        </a-row>
+      </a-col> 
+  </a-row>
+    </a-col>
+      <a-col :span="9" :pull="15" >
+         <img :src="require('@/assets/traceyy.jpg')" alt="Tracey" :style="{inlineSize:'90%'}" >
+    </a-col>
+  </a-row>
+  
+  <a-row type="flex"   >
+    <a-divider orientation="center" >
+         <h1 class= "about">Services</h1>
+         </a-divider> 
+
+
+  <a-col :span="8"  >
+    <a-card hoverable  >
+     <a-icon type="ant-design" class="service_icon"/>
+    <a-card-meta >
+      <template  slot="description">
+      <h1 :style="{color:'black' ,fontSize:'1.5em',marginTop:'5%'}">Web Design</h1>
+      </template>
+    </a-card-meta>
+  </a-card>
+    </a-col>
+
+    
+  <a-col :span="8"  >
+    <a-card hoverable >
+   <a-icon type="code" class="service_icon"/>
+    <a-card-meta >
+      <template  slot="description">
+      <h1 :style="{color:'black' ,fontSize:'1.5em',marginTop:'5%'}">Web Development</h1>
+      </template>
+    </a-card-meta>
+  </a-card>
+    </a-col>
+
+    
+  <a-col :span="8"  >
+    <a-card hoverable >
+    <a-icon type="desktop" class="service_icon"/>
+    <a-card-meta >
+      <template  slot="description">
+      <h1 :style="{color:'black' ,fontSize:'1.5em',marginTop:'5%'}">Responsive Design</h1>
+      </template>
+    </a-card-meta>
+  </a-card>
+    </a-col>
+    
+  <a-col :span="24" >
+<a-col :span="8">
+    <a-card hoverable :style="{backgroundColor: 'rgb(236, 98, 98 ,0.3)'}" >
+    <a-icon type="smile" class="service_icon"/>
+    <a-card-meta >
+      <template  slot="description">
+      <h1 :style="{color:'black' ,fontSize:'1.5em',marginTop:'5%'}">450</h1>
+      <h1 :style="{color:'black' ,fontSize:'1.2em',marginTop:'0%'}">TOTAL CLIENTS</h1>
+      </template>
+    </a-card-meta>
+  </a-card>
+</a-col>
+
+<a-col :span="8">
+    <a-card hoverable :style="{backgroundColor: 'rgb(236, 98, 98 ,0.3)'}" >
+   <a-icon type="calendar" class="service_icon"/>
+    <a-card-meta >
+      <template  slot="description">
+      <h1 :style="{color:'black' ,fontSize:'1.5em',marginTop:'5%'}">3</h1>
+      <h1 :style="{color:'black' ,fontSize:'1.2em',marginTop:'0%'}">YEARS EXPERIENCE</h1>
+      </template>
+    </a-card-meta>
+  </a-card>
+</a-col>
+
+<a-col :span="8">
+    <a-card hoverable :style="{backgroundColor: 'rgb(236, 98, 98 ,0.3)'}" >
+    <a-icon type="bar-chart" class="service_icon"/>
+    <a-card-meta >
+      <template  slot="description">
+      <h1 :style="{color:'black' ,fontSize:'1.5em',marginTop:'5%'}">10</h1>
+      <h1 :style="{color:'black' ,fontSize:'1.2em',marginTop:'0%'}">WORKS COMPLETED</h1>
+      </template>
+    </a-card-meta>
+  </a-card>
+</a-col>
+
+    </a-col>
+  </a-row>
+
+
+<div id="section-three">
+<a-row type = "flex" justify = "space-inbetween"  >
+   <a-divider orientation="center" >
+      <h1 class= "about">Projects</h1>
+  </a-divider> 
+
+ <a-col :span="11">
+  <a-card hoverable  :style="{padding:'5%',marginLeft:'5%'}">
+    <img
+      slot="cover"
+      alt="Smart Home System"
+      :src="require('@/assets/system.png')" 
+    />
+    <template slot="actions" class="ant-card-actions">
+      <a-icon key="plus-circle" type="plus-circle" />
+      <a-icon key="edit" type="edit" />
+      <a-icon key="ellipsis" type="ellipsis" />
+    </template>
+    <a-card-meta title="Smart Home System" description="python,html,css">
+     
+    </a-card-meta>
+  </a-card>
+  </a-col>
+
+
+
+     <a-col :span="11">
+  <a-card hoverable :style="{padding:'1%' ,marginLeft:'5%',inlineSize:'84%'}">
+    <img
+      slot="cover"
+      alt="Stackoverflow Clone"
+      :src="require('@/assets/overflow.png')" 
+    />
+    <template slot="actions" class="ant-card-actions">
+       <a-icon key="plus-circle" type="plus-circle" />
+      <a-icon key="edit" type="edit" />
+      <a-icon key="ellipsis" type="ellipsis" />
+    </template>
+    <a-card-meta title="Stackoverflow Clone" description="laravel,php,css">
+     
+    </a-card-meta>
+  </a-card>
+  </a-col>
+
+     <a-col :span="11">
+  <a-card hoverable :style="{marginTop:'5%',padding:'5%',marginLeft:'5%'}">
+    <img
+      slot="cover"
+      alt="My portifolio"
+      :src="require('@/assets/myp.png')" 
+    />
+    <template slot="actions" class="ant-card-actions">
+      <a-icon key="plus-circle" type="plus-circle" />
+      <a-icon key="edit" type="edit" />
+      <a-icon key="ellipsis" type="ellipsis" />
+    </template>
+    <a-card-meta title="My portifolio" description="vue,html,css">
+     
+    </a-card-meta>
+  </a-card>
+  </a-col>
+
+  <a-col :span="11">
+  <a-card hoverable :style="{marginTop:'5%',padding:'5%',marginLeft:'5%'}">
+    <img
+      slot="cover"
+      alt="Icecream App"
+      :src="require('@/assets/ice.png')" 
+    />
+    <template slot="actions" class="ant-card-actions">
+       <a-icon key="plus-circle" type="plus-circle" />
+      <a-icon key="edit" type="edit" />
+      <a-icon key="ellipsis" type="ellipsis" />
+    </template>
+    <a-card-meta title="Icecream App" description="css,html,javascript">
+     
+    </a-card-meta>
+  </a-card>
+  </a-col>
 
       </a-row>
+  </div>
       </div>
         </div>
       </a-layout-content>
@@ -273,7 +461,7 @@ computed: { // will be re-computed when the image property changes
 
 <style scoped>
 #components-layout-demo-responsive .logo {
-  height: 32px;
+  height: 50px;
   background: rgba(255, 255, 255, 0.2);
   margin: 16px;
 }
@@ -328,6 +516,8 @@ h1{
 
 h4{
   font-size: 1.2em;
+  text-align:justify;
+  padding: 2%;
 }
 
 .down-button{
@@ -344,14 +534,6 @@ h4{
  overflow:hidden;
 }
 
-img{
- 
-  margin-right: 10%;
-  margin-left: 10%;
-  padding: 5%;
-  inline-size: 100%;
-
-}
 
 img:hover {
         transform: scale(1.01);
@@ -365,27 +547,31 @@ img:hover {
 
 }
 
-.about{
-  color:black;
-  text-align: left;
-  font-size: 1.5em;
-  text-align: center;
-  border: 2px solid rgb(236, 98, 98);
-  border-radius: 10px;
-  width:40%;
-  height:auto;
+.service_icon{
+  font-size:70px;
   color : rgb(236, 98, 98);
-  margin-left: 25%;
-  margin-top: 3%;
-  margin-bottom: 3%;
+}
+
+.about{
+ 
+  font-size: 2em;
+  
+  
+  /* border-radius: 10px;
+  width:40%;
+  height:auto; */
+  color : rgb(236, 98, 98);
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-bottom: 0%; 
 }
 
 .about_me{
   color:black;
   text-align:justify;
   font-size: 1.2em;
-  margin-left: 5%;
-  margin-right: 7%;
+  /* margin-left: 5%;
+  margin-right: 7%; */
 }
 
 
