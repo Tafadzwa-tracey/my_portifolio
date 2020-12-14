@@ -268,7 +268,7 @@
       <h1 class= "about">Projects</h1>
   </a-divider> 
 
- <a-col :span="11">
+ <a-col :span="12">
   <a-card hoverable  :style="{padding:'5%',marginLeft:'5%'}">
     <img
       slot="cover"
@@ -290,13 +290,13 @@
 
 
 
-     <a-col :span="11">
-  <a-card hoverable :style="{padding:'1%' ,marginLeft:'5%'}">
+     <a-col :span="12">
+  <a-card hoverable :style="{padding:'1%' ,marginLeft:'5%',marginRight:'5%'}">
     <img
       slot="cover"
       alt="Stackoverflow Clone"
       :src="require('@/assets/overflow.png')" 
-      :style="{inlineSize:'88%',marginLeft:'5%'}"
+      :style="{inlineSize:'93%',marginLeft:'5%'}"
     />
     <template slot="actions" class="ant-card-actions">
         <a :href="'https://github.com/Tafadzwa-tracey/laravel_stackoverflow_clone/'">
@@ -311,12 +311,13 @@
   </a-card>
   </a-col>
 
-     <a-col :span="11">
+     <a-col :span="12">
   <a-card hoverable :style="{marginTop:'5%',padding:'5%',marginLeft:'5%'}">
     <img
       slot="cover"
       alt="My portifolio"
       :src="require('@/assets/myp.png')" 
+      :style="{inlineSize:'94%'}"
     />
     <template slot="actions" class="ant-card-actions">
       <a :href="'https://tafadzwa-tracey.github.io/my_portifolio/'">
@@ -331,12 +332,13 @@
   </a-card>
   </a-col>
 
-  <a-col :span="11">
-  <a-card hoverable :style="{marginTop:'5%',padding:'5%',marginLeft:'5%'}">
+  <a-col :span="12">
+  <a-card hoverable :style="{marginTop:'5%',padding:'5%',marginLeft:'5%',marginRight:'5%'}">
     <img
       slot="cover"
       alt="Icecream App"
       :src="require('@/assets/ice.png')" 
+      :style="{inlineSize:'100%'}" 
     />
     <template slot="actions" class="ant-card-actions">
        <a :href="'https://github.com/Tafadzwa-tracey/icecream-app/'">
