@@ -276,7 +276,9 @@
       :src="require('@/assets/system.png')" 
     />
     <template slot="actions" class="ant-card-actions">
+      <a :href="'https://github.com/Tafadzwa-tracey/smartHomeSystem/'">
       <a-icon key="plus-circle" type="plus-circle" />
+      </a>
       <a-icon key="edit" type="edit" />
       <a-icon key="ellipsis" type="ellipsis" />
     </template>
@@ -297,7 +299,9 @@
       :style="{inlineSize:'88%',marginLeft:'5%'}"
     />
     <template slot="actions" class="ant-card-actions">
-       <a-icon key="plus-circle" type="plus-circle" />
+        <a :href="'https://github.com/Tafadzwa-tracey/laravel_stackoverflow_clone/'">
+      <a-icon key="plus-circle" type="plus-circle" />
+      </a>
       <a-icon key="edit" type="edit" />
       <a-icon key="ellipsis" type="ellipsis" />
     </template>
@@ -335,7 +339,9 @@
       :src="require('@/assets/ice.png')" 
     />
     <template slot="actions" class="ant-card-actions">
-       <a-icon key="plus-circle" type="plus-circle" />
+       <a :href="'https://github.com/Tafadzwa-tracey/icecream-app/'">
+      <a-icon key="plus-circle" type="plus-circle" />
+      </a>
       <a-icon key="edit" type="edit" />
       <a-icon key="ellipsis" type="ellipsis" />
     </template>
