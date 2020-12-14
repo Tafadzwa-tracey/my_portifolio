@@ -12,8 +12,14 @@
       <vue-avatar class= "logo" :username="'Tracey'" :src="require('@/assets/tracey.png')"></vue-avatar>
       <a-menu theme="dark" mode="inline" :default-selected-keys="['1']">
 
+         <a-menu-item  class="menu-items" key="1" :style="{ backgroundColor:'rgb(236, 98, 98)'}" >
+          <router-link to="#" v-scroll-to="'#components-layout-demo-responsive'">
+          <a-icon type="home" />
+          <span class="nav-text">Home</span>
+          </router-link>
+        </a-menu-item>
 
-        <a-menu-item  class="menu-items" key="1" :style="{ backgroundColor:'rgb(236, 98, 98)'}" >
+        <a-menu-item  class="menu-items" key="2" >
           <router-link to="#" v-scroll-to="'#section-four'">
           <a-icon type="project" />
           <span class="nav-text">Projects</span>
@@ -21,7 +27,7 @@
         </a-menu-item>
 
 
-        <a-menu-item  class="menu-items" key="2">
+        <a-menu-item  class="menu-items" key="3">
           <router-link to="#" v-scroll-to="'#section-two'"> 
           <a-icon type="user" />
           <span class="nav-text">About</span>
@@ -173,11 +179,14 @@
 
 
   <a-col :span="8"  >
-    <a-card hoverable  >
+    <a-card hoverable  :style="{marginLeft:'5%'}">
      <a-icon type="ant-design" class="service_icon"/>
     <a-card-meta >
       <template  slot="description">
       <h1 :style="{color:'black' ,fontSize:'1.5em',marginTop:'5%'}">Web Design</h1>
+
+      <h4 class="about_me"> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+       Facilis dolorum dolorem soluta quidem expedita aperiam aliquid at. </h4>
       </template>
     </a-card-meta>
   </a-card>
@@ -185,11 +194,13 @@
 
     
   <a-col :span="8"  >
-    <a-card hoverable >
+    <a-card hoverable :style="{marginLeft:'5%'}">
    <a-icon type="code" class="service_icon"/>
     <a-card-meta >
       <template  slot="description">
       <h1 :style="{color:'black' ,fontSize:'1.5em',marginTop:'5%'}">Web Development</h1>
+      <h4 class="about_me"> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+       Facilis dolorum dolorem soluta quidem expedita aperiam aliquid at. </h4>
       </template>
     </a-card-meta>
   </a-card>
@@ -197,11 +208,13 @@
 
     
   <a-col :span="8"  >
-    <a-card hoverable >
+    <a-card hoverable :style="{marginLeft:'5%',marginRight:'5%'}" >
     <a-icon type="desktop" class="service_icon"/>
     <a-card-meta >
       <template  slot="description">
       <h1 :style="{color:'black' ,fontSize:'1.5em',marginTop:'5%'}">Responsive Design</h1>
+      <h4 class="about_me"> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+       Facilis dolorum dolorem soluta quidem expedita aperiam aliquid. </h4>
       </template>
     </a-card-meta>
   </a-card>
@@ -209,36 +222,36 @@
     
   <a-col :span="24" >
 <a-col :span="8">
-    <a-card hoverable :style="{backgroundColor: 'rgb(236, 98, 98 ,0.3)'}" >
+    <a-card hoverable :style="{backgroundColor: 'rgb(236, 98, 98 ,0.3)',marginLeft:'5%',marginTop:'5%'}" >
     <a-icon type="smile" class="service_icon"/>
     <a-card-meta >
       <template  slot="description">
       <h1 :style="{color:'black' ,fontSize:'1.5em',marginTop:'5%'}">450</h1>
-      <h1 :style="{color:'black' ,fontSize:'1.2em',marginTop:'0%'}">TOTAL CLIENTS</h1>
+      <h1 :style="{color:'black' ,fontSize:'1.5em'}">Total clients</h1>
       </template>
     </a-card-meta>
   </a-card>
 </a-col>
 
 <a-col :span="8">
-    <a-card hoverable :style="{backgroundColor: 'rgb(236, 98, 98 ,0.3)'}" >
+    <a-card hoverable :style="{backgroundColor: 'rgb(236, 98, 98 ,0.3)',marginLeft:'5%',marginTop:'5%'}" >
    <a-icon type="calendar" class="service_icon"/>
     <a-card-meta >
       <template  slot="description">
       <h1 :style="{color:'black' ,fontSize:'1.5em',marginTop:'5%'}">3</h1>
-      <h1 :style="{color:'black' ,fontSize:'1.2em',marginTop:'0%'}">YEARS EXPERIENCE</h1>
+      <h1 :style="{color:'black' ,fontSize:'1.5em'}">Experience years</h1>
       </template>
     </a-card-meta>
   </a-card>
 </a-col>
 
 <a-col :span="8">
-    <a-card hoverable :style="{backgroundColor: 'rgb(236, 98, 98 ,0.3)'}" >
+    <a-card hoverable :style="{backgroundColor: 'rgb(236, 98, 98 ,0.3)',marginLeft:'5%',marginRight:'5%',marginTop:'5%'}" >
     <a-icon type="bar-chart" class="service_icon"/>
     <a-card-meta >
       <template  slot="description">
       <h1 :style="{color:'black' ,fontSize:'1.5em',marginTop:'5%'}">10</h1>
-      <h1 :style="{color:'black' ,fontSize:'1.2em',marginTop:'0%'}">WORKS COMPLETED</h1>
+      <h1 :style="{color:'black' ,fontSize:'1.5em'}">Works completed</h1>
       </template>
     </a-card-meta>
   </a-card>
@@ -302,7 +315,9 @@
       :src="require('@/assets/myp.png')" 
     />
     <template slot="actions" class="ant-card-actions">
+      <a :href="'https://tafadzwa-tracey.github.io/my_portifolio/'">
       <a-icon key="plus-circle" type="plus-circle" />
+      </a>
       <a-icon key="edit" type="edit" />
       <a-icon key="ellipsis" type="ellipsis" />
     </template>
@@ -339,10 +354,11 @@
       <a-layout-footer style="textAlign: center">
   <div id = "section-three" >
     <a-row type="flex">
+    <a-divider>
+      <h1 class="about">Contact me</h1>
+    </a-divider>
     <a-col :span="12">
-      <a-divider >
-       <h1 class="about">Email me</h1>
-      </a-divider>
+     
     <a-form :form="form" @submit="handleSubmit">
 
        <a-form-item v-bind="formItemLayout"  label="Username" >
@@ -390,9 +406,7 @@
     </a-form>
     </a-col>
     <a-col :span="12">
-    <a-divider>
-      <h1 class="about">Contact me</h1>
-    </a-divider>
+   
     <h4 class="about_me">Lorem ipsum dolor sit amet consectetur adipisicing elit.
        Facilis dolorum dolorem soluta quidem expedita aperiam aliquid at. 
       Totam magni ipsum suscipit amet? Autem nemo esse laboriosam ratione nobis mollitia inventore?</h4>
@@ -481,9 +495,9 @@ computed: { // will be re-computed when the image property changes
 
 <style scoped>
 #components-layout-demo-responsive .logo {
-  height: 50px;
+  height: 200px;
   background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
+  margin: 30px;
 }
 
  .menu-items {
